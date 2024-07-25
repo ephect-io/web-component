@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "98deec77a4db75f452d0696c9befa312",
+    "packages": [
+        {
+            "name": "ephect-io/framework",
+            "version": "dev-featured",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ephect-io/framework.git",
+                "reference": "363b353214148f0c5251b33be9039384f152e129"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/363b353214148f0c5251b33be9039384f152e129",
+                "reference": "363b353214148f0c5251b33be9039384f152e129",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-iconv": "*",
+                "ext-mysqlnd": "*",
+                "ext-pdo": "*",
+                "ext-readline": "*",
+                "ext-sqlite3": "*",
+                "ext-zip": "*",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "David Blanchard",
+                    "email": "dpjb@hotmail.fr",
+                    "homepage": "https://ephect.io",
+                    "role": "Creator"
+                }
+            ],
+            "description": "Effective PHP",
+            "homepage": "https://ephect.io",
+            "support": {
+                "issues": "https://github.com/ephect-io/framework/issues",
+                "source": "https://github.com/ephect-io/framework/tree/featured"
+            },
+            "time": "2024-07-21T23:35:00+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "ephect-io/framework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

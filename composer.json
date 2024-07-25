@@ -1,0 +1,22 @@
+{
+    "name": "ephect-io/web-component",
+    "description": "An Ephect framework plugin to build web components.",
+    "type": "library",
+    "homepage": "https://ephect.io",
+    "require": {
+        "ephect-io/framework": "dev-featured"
+    },
+    "license": "GPLv3",
+    "autoload": {
+        "psr-4": {
+            "EphectIo\\WebComponent\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dpjb",
+            "email": "dpjb@hotmail.fr"
+        }
+    ],
+    "minimum-stability": "stable"
+}
