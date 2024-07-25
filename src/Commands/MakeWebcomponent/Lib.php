@@ -1,6 +1,6 @@
 <?php
 
-namespace Ephect\Commands\MakeWebComponent;
+namespace Ephect\Plugins\WebComponent\Commands\MakeWebComponent;
 
 use Ephect\Framework\CLI\Console;
 use Ephect\Framework\CLI\ConsoleColors;

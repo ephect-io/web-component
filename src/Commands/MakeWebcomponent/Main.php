@@ -1,6 +1,6 @@
 <?php
 
-namespace Ephect\Commands\MakeWebComponent;
+namespace Ephect\Plugins\WebComponent\Commands\MakeWebComponent;
 
 use Ephect\Framework\Commands\AbstractCommand;
 use Ephect\Framework\Commands\Attributes\CommandDeclaration;
