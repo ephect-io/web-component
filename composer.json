@@ -20,7 +20,10 @@
         "ephect-io/framework": "dev-featured"
     },
     "require-dev": {
-        "ephect-io/toolbox": "dev-main"
+        "ephect-io/toolbox": "dev-develop"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "bin": [
+        "bin/ephect-webcomponent_install.sh"
+    ]
 }
