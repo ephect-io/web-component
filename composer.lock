@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98deec77a4db75f452d0696c9befa312",
+    "content-hash": "fd0c5de156e8b614e3271ea643a2d572",
     "packages": [
         {
             "name": "ephect-io/framework",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "363b353214148f0c5251b33be9039384f152e129"
+                "reference": "f0112a8bc81006f785bca35b3cec15108217662d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/363b353214148f0c5251b33be9039384f152e129",
-                "reference": "363b353214148f0c5251b33be9039384f152e129",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/f0112a8bc81006f785bca35b3cec15108217662d",
+                "reference": "f0112a8bc81006f785bca35b3cec15108217662d",
                 "shasum": ""
             },
             "require": {
@@ -49,14 +49,63 @@
                 "issues": "https://github.com/ephect-io/framework/issues",
                 "source": "https://github.com/ephect-io/framework/tree/featured"
             },
-            "time": "2024-07-21T23:35:00+00:00"
+            "time": "2024-07-28T16:16:46+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "ephect-io/toolbox",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ephect-io/toolbox.git",
+                "reference": "0c786c7d4908ae6fa4b74225bdfe53b6dcf96eb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ephect-io/toolbox/zipball/0c786c7d4908ae6fa4b74225bdfe53b6dcf96eb6",
+                "reference": "0c786c7d4908ae6fa4b74225bdfe53b6dcf96eb6",
+                "shasum": ""
+            },
+            "require": {
+                "ephect-io/framework": "dev-featured"
+            },
+            "default-branch": true,
+            "bin": [
+                "bin/publisher.sh"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ephect\\Toolbox\\": "app/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "David Blanchard",
+                    "email": "dpjb@hotmail.fr",
+                    "homepage": "https://ephect.io",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A bunch of scripts to help developing with Ephect framework",
+            "homepage": "https://ephect.io",
+            "support": {
+                "issues": "https://github.com/ephect-io/toolbox/issues",
+                "source": "https://github.com/ephect-io/toolbox/tree/main"
+            },
+            "time": "2024-07-27T17:10:15+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ephect-io/framework": 20
+        "ephect-io/framework": 20,
+        "ephect-io/toolbox": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

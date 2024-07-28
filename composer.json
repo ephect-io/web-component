@@ -3,10 +3,8 @@
     "description": "An Ephect framework plugin to build web components.",
     "type": "library",
     "homepage": "https://ephect.io",
-    "require": {
-        "ephect-io/framework": "dev-featured"
-    },
-    "license": "GPLv3",
+    "license": "GPL-3.0+",
+    "version": "0.7.2",
     "autoload": {
         "psr-4": {
             "Ephect\\Plugins\\WebComponent\\": "src/"
@@ -18,5 +16,11 @@
             "email": "dpjb@hotmail.fr"
         }
     ],
+    "require": {
+        "ephect-io/framework": "dev-featured"
+    },
+    "require-dev": {
+        "ephect-io/toolbox": "dev-main"
+    },
     "minimum-stability": "stable"
 }
