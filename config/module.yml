@@ -4,5 +4,5 @@ module:
   lang: fr
   hostname: http://example.com
   namespace: Name\Space
-  framework: vendor/ephect-io/framework/Ephect
+  framework: ../framework/Ephect
   javascripts: vendor/ephect-io/javascripts/Ajil
