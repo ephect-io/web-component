@@ -1,5 +1,3 @@
-<?php
-
 #!/usr/bin/env sh
 
 cd vendor/ephect-io/web-component
