@@ -3,7 +3,7 @@ REMOVE=$1;
 
 cd vendor/ephect-io/web-component
 
-if [ "$REMOVE" == "-r" ];
+if [ "$REMOVE" = "-r" ];
 then
   php use remove:plugin $(pwd)
 else
