@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "f7ab6f0d0eef856160c5dc5bb8b9b9664f57efbb"
+                "reference": "8c20519e06d79f01069358f63d19a4944a26d57e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/f7ab6f0d0eef856160c5dc5bb8b9b9664f57efbb",
-                "reference": "f7ab6f0d0eef856160c5dc5bb8b9b9664f57efbb",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/8c20519e06d79f01069358f63d19a4944a26d57e",
+                "reference": "8c20519e06d79f01069358f63d19a4944a26d57e",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/ephect-io/framework/issues",
                 "source": "https://github.com/ephect-io/framework/tree/featured"
             },
-            "time": "2024-07-28T20:35:14+00:00"
+            "time": "2024-07-29T06:56:30+00:00"
         }
     ],
     "packages-dev": [
@@ -59,19 +59,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/toolbox.git",
-                "reference": "df3cec0ee9f6c28325e43c45cfb665b9005c320d"
+                "reference": "8c4c48fb580da6bf5b1dedb91d78deb02462ebd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/toolbox/zipball/df3cec0ee9f6c28325e43c45cfb665b9005c320d",
-                "reference": "df3cec0ee9f6c28325e43c45cfb665b9005c320d",
+                "url": "https://api.github.com/repos/ephect-io/toolbox/zipball/8c4c48fb580da6bf5b1dedb91d78deb02462ebd2",
+                "reference": "8c4c48fb580da6bf5b1dedb91d78deb02462ebd2",
                 "shasum": ""
             },
             "require": {
                 "ephect-io/framework": "dev-featured"
             },
             "bin": [
-                "bin/epehct-toolbox_install.sh"
+                "bin/epehct-io_toolbox_install.sh"
             ],
             "type": "library",
             "autoload": {
@@ -97,7 +97,7 @@
                 "issues": "https://github.com/ephect-io/toolbox/issues",
                 "source": "https://github.com/ephect-io/toolbox/tree/develop"
             },
-            "time": "2024-07-28T19:53:53+00:00"
+            "time": "2024-07-29T07:00:20+00:00"
         }
     ],
     "aliases": [],
