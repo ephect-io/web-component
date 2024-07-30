@@ -24,6 +24,7 @@
     },
     "minimum-stability": "stable",
     "bin": [
-        "bin/ephect-io_web-component_install.sh"
+        "bin/ephect-io_web-component_install.sh",
+        "bin/ephect-io_web-component_install.bat"
     ]
 }
