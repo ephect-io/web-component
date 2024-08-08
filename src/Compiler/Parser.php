@@ -13,7 +13,7 @@ class Parser extends RawHtmlParser
 
     public function __construct(private readonly string $html)
     {
-        parent::__construct($html);
+        parent::__construct($this->html);
     }
 
     public function doTags(): void

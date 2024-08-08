@@ -6,7 +6,7 @@ use Ephect\Framework\CLI\Console;
 use Ephect\Framework\CLI\ConsoleColors;
 use Ephect\Framework\CLI\Enums\ConsoleOptionsEnum;
 use Ephect\Framework\Commands\AbstractCommandLib;
-use Ephect\Plugins\WebComponent\Builder\Builder;
+use Ephect\Plugins\WebComponent\Builder\Compiler;
 use Exception;
 
 class Lib extends AbstractCommandLib
@@ -20,7 +20,7 @@ class Lib extends AbstractCommandLib
             Console::writeLine(ConsoleColors::getColoredString("Please, answer the following questions.", ConsoleColors::BLUE));
             Console::writeLine(ConsoleColors::getColoredString("Leave the answer blank to pass to the next question or to abort the process.", ConsoleColors::BROWN));
 
-            $builder = new Builder;
+            $builder = new Compiler;
             [$tagName, $className, $hasBackendProps, $entrypoint, $arguments] = $this->readLine();
 
             $destDir = SRC_ROOT . 'WebComponents' . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR;

@@ -7,7 +7,7 @@ use Ephect\Plugins\WebComponent\Manifest\ManifestStructure;
 use Ephect\Plugins\WebComponent\Manifest\ManifestWriter;
 use Exception;
 
-class Builder
+class Compiler
 {
 
     /**
