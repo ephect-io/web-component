@@ -2,12 +2,11 @@
 
 namespace Ephect\Plugins\WebComponent;
 
-use Ephect\Framework\Components\AbstractFileComponent;
+use Ephect\Framework\Application\ApplicationComponent;
 use Ephect\Framework\Registry\ComponentRegistry;
-use Ephect\Framework\Registry\WebComponentRegistry;
 use Ephect\Framework\Utils\File;
 
-class WebComponent extends AbstractFileComponent
+class WebComponent extends ApplicationComponent
 {
 
     public function makeComponent(string $filename, string &$html): void
