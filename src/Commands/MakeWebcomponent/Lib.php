@@ -20,14 +20,17 @@ class Lib extends AbstractCommandLib
             Console::writeLine(ConsoleColors::getColoredString("Please, answer the following questions.", ConsoleColors::BLUE));
             Console::writeLine(ConsoleColors::getColoredString("Leave the answer blank to pass to the next question or to abort the process.", ConsoleColors::BROWN));
 
+            $moduleTemplatesFile = SRC_ROOT . REL_CONFIG_DIR . 'templates';
+            $configTemplatesDir = file_exists($moduleTemplatesFile) ? SRC_ROOT . file_get_contents($moduleTemplatesFile) : null;
+
             $builder = new Compiler;
             [$tagName, $className, $hasBackendProps, $entrypoint, $arguments] = $this->readLine();
 
-            $destDir = SRC_ROOT . 'WebComponents' . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR;
+            $destDir = siteSrcPath() . $configTemplatesDir . DIRECTORY_SEPARATOR . $className . DIRECTORY_SEPARATOR;
 
             $builder->saveManifest($tagName, $className, $entrypoint, $arguments, $destDir);
 
-            $srcDir = PLUGINS_ROOT . 'WebComponent' . DIRECTORY_SEPARATOR . 'Templates' . DIRECTORY_SEPARATOR;
+            $srcDir = SRC_ROOT . 'Templates' . DIRECTORY_SEPARATOR;
 
             $builder->copyTemplates($tagName, $className, $hasBackendProps, $entrypoint, $arguments, $srcDir, $destDir);
 
