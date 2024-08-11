@@ -17,10 +17,7 @@
         }
     ],
     "require": {
-        "ephect-io/framework": "dev-featured"
-    },
-    "require-dev": {
-        "ephect-io/toolbox": "dev-develop"
+        "ephect-io/framework": "dev-plugin_webcomponent"
     },
     "minimum-stability": "stable",
     "bin": [
