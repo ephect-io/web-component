@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f4e5d3fef410047ad686680cdf554c2",
+    "content-hash": "5b74187fd5bb2d2ad1346bcb70966274",
     "packages": [
         {
             "name": "ephect-io/framework",
-            "version": "dev-plugin_webcomponent",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "d1767762ed6bbf0bbe12ae6ebcf824dc14d6b151"
+                "reference": "f0b60e71f10fc9b993ca31d8f0e847b8972b1f75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/d1767762ed6bbf0bbe12ae6ebcf824dc14d6b151",
-                "reference": "d1767762ed6bbf0bbe12ae6ebcf824dc14d6b151",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/f0b60e71f10fc9b993ca31d8f0e847b8972b1f75",
+                "reference": "f0b60e71f10fc9b993ca31d8f0e847b8972b1f75",
                 "shasum": ""
             },
             "require": {
@@ -47,9 +47,9 @@
             "homepage": "https://ephect.io",
             "support": {
                 "issues": "https://github.com/ephect-io/framework/issues",
-                "source": "https://github.com/ephect-io/framework/tree/plugin_webcomponent"
+                "source": "https://github.com/ephect-io/framework/tree/develop"
             },
-            "time": "2024-08-12T11:28:40+00:00"
+            "time": "2024-08-12T11:42:38+00:00"
         }
     ],
     "packages-dev": [],
