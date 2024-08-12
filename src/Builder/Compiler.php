@@ -146,10 +146,12 @@ class Compiler
             <?php
             namespace $namespace;
 
+            use Ephect\Plugins\WebComponent\Attributes\WebComponentZeroConf;
             use function Ephect\Hooks\useEffect;
 
             #[WebComponentZeroConf]
-            function $className(\$slot) {
+            function $className(\$slot): string
+            {
 
             useEffect(function (\$slot, /* string */ \$foo) {
                 \$foo = "It works!"; 
@@ -161,7 +163,6 @@ class Compiler
             </WebComponent>
             HTML);
             }
-            
             COMPONENT;
         }
 

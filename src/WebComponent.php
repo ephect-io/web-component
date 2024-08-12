@@ -17,9 +17,9 @@ class WebComponent extends ApplicationComponent
 
         $html = <<< COMPONENT
         <?php
-
         namespace $namespace;
 
+        use Ephect\Plugins\WebComponent\Attributes\WebComponentZeroConf;
         use function Ephect\Hooks\useEffect;
 
         #[WebComponentZeroConf]
