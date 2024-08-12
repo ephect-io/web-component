@@ -16,11 +16,8 @@ class ManifestReader
         $manifestFilename = 'manifest.json';
         $manifestCache = CACHE_DIR . $this->motherUID . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename;
 
-        $moduleTemplatesFile = SRC_ROOT . REL_CONFIG_DIR . 'templates';
-        $configTemplatesDir = file_exists($moduleTemplatesFile) ? SRC_ROOT . file_get_contents($moduleTemplatesFile) : null;
-
-        if (!file_exists($manifestCache) && file_exists($configTemplatesDir)) {
-            copy($configTemplatesDir . $this->name . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename, $manifestCache);
+        if (!file_exists($manifestCache)) {
+            copy(CUSTOM_WEBCOMPONENTS_ROOT . $this->name . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename, $manifestCache);
         }
 
         $manifestJson = File::safeRead($manifestCache);
