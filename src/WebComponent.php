@@ -3,6 +3,7 @@
 namespace Ephect\Plugins\WebComponent;
 
 use Ephect\Framework\Components\Application\ApplicationComponent;
+use Ephect\Framework\Modules\ModuleMaker;
 use Ephect\Framework\Registry\ComponentRegistry;
 use Ephect\Framework\Utils\File;
 
@@ -15,23 +16,7 @@ class WebComponent extends ApplicationComponent
         $namespace = CONFIG_NAMESPACE;
         $function = $info->filename;
 
-        $html = <<< COMPONENT
-        <?php
-        namespace $namespace;
-
-        use Ephect\Plugins\WebComponent\Attributes\WebComponentZeroConf;
-        use function Ephect\Hooks\useEffect;
-
-        #[WebComponentZeroConf]
-        function $function(\$slot): string
-        {
-        return (<<< HTML
-        <WebComponent>
-        $html
-        </WebComponent>
-        HTML);
-        }
-        COMPONENT;
+        $html = ModuleMaker::makeTemplate('Component.tpl', ['funcNamespace' => $namespace, 'funcName' => $function, 'funcBody' => '', 'html' => $html]);
 
         File::safeWrite(COPY_DIR . $filename, $html);
 

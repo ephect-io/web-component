@@ -2,6 +2,7 @@
 
 namespace Ephect\Plugins\WebComponent\Builder;
 
+use Ephect\Framework\Modules\ModuleMaker;
 use Ephect\Framework\Utils\File;
 use Ephect\Plugins\WebComponent\Manifest\ManifestStructure;
 use Ephect\Plugins\WebComponent\Manifest\ManifestWriter;
@@ -54,19 +55,17 @@ class Compiler
     function copyTemplates(string $tagName, string $className, bool $hasBackendProps, string $entrypoint, array $arguments, string $srcDir, string $destDir): void
     {
 
-        $classText = File::safeRead($srcDir . 'Base.class.tpl');
-        $classText = str_replace('{{Base}}', $className, $classText);
-        $classText = str_replace('{{entrypoint}}', $entrypoint, $classText);
+        $classText = ModuleMaker::makeTemplate('Base.class.tpl', ['Base' => $className, 'entrypoint' => $entrypoint,]);
 
         $objectName = lcfirst($className);
-        $componentText = File::safeRead($srcDir . 'Base.tpl');
-        $componentText = str_replace('{{Base}}', $className, $componentText);
-        $componentText = str_replace('{{tag-name}}', $tagName, $componentText);
-        $componentText = str_replace('{{entrypoint}}', $entrypoint, $componentText);
-        $componentText = str_replace('{{objectName}}', $objectName, $componentText);
+        $componentText = ModuleMaker::makeTemplate('Base.tpl', [
+            'Base' => $className,
+            'tag-name' => $tagName,
+            'entrypoint' => $entrypoint,
+            'objectName' => $objectName,
+        ]);
 
-        $baseElementText =   File::safeRead($srcDir . 'BaseElement.tpl');
-        $baseElementText = str_replace('{{Base}}', $className, $baseElementText);
+        $baseElementText = ModuleMaker::makeTemplate('BaseElement.tpl', ['Base' => $className,]);
 
         $parameters = $arguments;
         $arguments[] = 'styles';
@@ -142,28 +141,15 @@ class Compiler
             $namespace = CONFIG_NAMESPACE;
 
             $componentText = str_replace("</template>", "    <h2>{{ foo }}</h2>\n</template>", $componentText);
-            $componentText = <<< COMPONENT
-            <?php
-            namespace $namespace;
 
-            use Ephect\Plugins\WebComponent\Attributes\WebComponentZeroConf;
-            use function Ephect\Hooks\useEffect;
-
-            #[WebComponentZeroConf]
-            function $className(\$slot): string
-            {
-
+            $funcBody = <<< FUNC_BODY
             useEffect(function (\$slot, /* string */ \$foo) {
                 \$foo = "It works!"; 
             });
+            FUNC_BODY;
 
-            return (<<< HTML
-            <WebComponent>
-            $componentText
-            </WebComponent>
-            HTML);
-            }
-            COMPONENT;
+            $componentText = ModuleMaker::makeTemplate('Component.tpl', ['funcNamespace' => $namespace, 'funcName' => $className, 'funcBody' => $funcBody, 'html' => $componentText]);
+
         }
 
         File::safeWrite($destDir . "$className.phtml", $componentText);
