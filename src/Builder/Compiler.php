@@ -2,8 +2,7 @@
 
 namespace Ephect\Plugins\WebComponent\Builder;
 
-use Ephect\Framework\Modules\ModuleMaker;
-use Ephect\Framework\Utils\File;
+use Ephect\Framework\Templates\TemplateMaker;
 use Ephect\Plugins\WebComponent\Manifest\ManifestStructure;
 use Ephect\Plugins\WebComponent\Manifest\ManifestWriter;
 use Exception;
@@ -54,32 +53,36 @@ class Compiler
      */
     function copyTemplates(string $tagName, string $className, bool $hasBackendProps, string $entrypoint, array $arguments, string $srcDir, string $destDir): void
     {
+        $templatesDir = MODULE_SRC_DIR . 'Templates' . DIRECTORY_SEPARATOR;
 
-        $classText = ModuleMaker::makeTemplate('Base.class.tpl', ['Base' => $className, 'entrypoint' => $entrypoint,]);
+        $classTextMaker = new TemplateMaker($templatesDir . 'Base.class.tpl');
+        $baseElementTextMaker = new TemplateMaker($templatesDir . 'BaseElement.tpl');
+        $baseTextMaker = new TemplateMaker($templatesDir . 'Base.tpl');
+        $componentTextMaker =  new TemplateMaker($templatesDir . 'Component.tpl');
 
-        $objectName = lcfirst($className);
-        $componentText = ModuleMaker::makeTemplate('Base.tpl', [
+        $classTextMaker->make(['Base' => $className, 'entrypoint' => $entrypoint,]);
+
+        $baseTextMaker->make([
             'Base' => $className,
             'tag-name' => $tagName,
             'entrypoint' => $entrypoint,
-            'objectName' => $objectName,
+            'objectName' => lcfirst($className),
         ]);
 
-        $baseElementText = ModuleMaker::makeTemplate('BaseElement.tpl', ['Base' => $className,]);
+        $baseElementTextMaker->make(['Base' => $className,]);
 
         $parameters = $arguments;
         $arguments[] = 'styles';
         $arguments[] = 'classes';
 
         if (count($arguments) == 0) {
-            $classText = str_replace('({{DeclaredAttributes}})', "()", $classText);
+            $classTextMaker->make(['DeclaredAttributes' => '',]);
+            $baseElementTextMaker->make(['GetAttributes' => '',]);
+            $baseTextMaker->make(['Attributes' => '',]);
 
-            $baseElementText = str_replace('{{GetAttributes}}', '', $baseElementText);
-            $componentText = str_replace('{{Attributes}}', '', $componentText);
-
-            File::safeWrite($destDir . "$className.class.js", $classText);
-            File::safeWrite($destDir . "$className.phtml", $componentText);
-            File::safeWrite($destDir . $className . "Element.js", $baseElementText);
+            $classTextMaker->save($destDir . "$className.class.js");
+            $baseElementTextMaker->save($destDir . $className . "Element.js");
+            $baseTextMaker->save($destDir . "$className.phtml");
 
             return;
         }
@@ -92,7 +95,7 @@ class Compiler
             $properties .= '            ';
         }
 
-        $baseElementText = str_replace('{{Properties}}', $properties, $baseElementText);
+        $baseElementTextMaker->make(['Properties' => $properties,]);
 
         $attributes = array_map(function ($item) {
             return "'$item'";
@@ -105,7 +108,6 @@ class Compiler
         $declaredAttributes = implode(", ", $parameters);
         $attributes = implode(", ", $attributes);
 
-        $argumentListAndResult = $thisParameters;
         $thisAttributeList = implode(", ", $thisParameters);
 
         $observeAttributes = <<< HTML
@@ -117,7 +119,7 @@ class Compiler
                     }
             HTML;
 
-        $baseElementText = str_replace('{{ObserveAttributes}}', $observeAttributes, $baseElementText);
+        $baseElementTextMaker->make(['ObserveAttributes' => $observeAttributes,]);
 
         $getAttributes = '';
         foreach ($arguments as $attribute) {
@@ -129,18 +131,14 @@ class Compiler
             $getAttributes .= '    ';
         }
 
-        $classText = str_replace('({{DeclaredAttributes}})', "(" . $declaredAttributes . ")", $classText);
-
-        $baseElementText = str_replace('{{GetAttributes}}', $getAttributes, $baseElementText);
-        $componentText = str_replace('{{AttributeList}}', $thisAttributeList, $componentText);
-
-        File::safeWrite($destDir . $className . CLASS_JS_EXTENSION, $classText);
-        File::safeWrite($destDir . $className . "Element" . JS_EXTENSION, $baseElementText);
+        $classTextMaker->make(['DeclaredAttributes' => $declaredAttributes,]);
+        $baseElementTextMaker->make(['GetAttributes' => $getAttributes,]);
+        $baseTextMaker->make(['AttributeList' => $thisAttributeList,]);
 
         if ($hasBackendProps) {
             $namespace = CONFIG_NAMESPACE;
 
-            $componentText = str_replace("</template>", "    <h2>{{ foo }}</h2>\n</template>", $componentText);
+            $baseTextMaker->make(['endTemplate' => '<h2>{{ foo }}</h2>',]);
 
             $funcBody = <<< FUNC_BODY
             useEffect(function (\$slot, /* string */ \$foo) {
@@ -148,11 +146,16 @@ class Compiler
             });
             FUNC_BODY;
 
-            $componentText = ModuleMaker::makeTemplate('Component.tpl', ['funcNamespace' => $namespace, 'funcName' => $className, 'funcBody' => $funcBody, 'html' => $componentText]);
-
+            $componentTextMaker->make(['funcNamespace' => $namespace, 'funcName' => $className, 'funcBody' => $funcBody, 'html' => $baseTextMaker->getTemplate()]);
+            $baseTextMaker->setTemplate($componentTextMaker->getTemplate());
+        } else {
+            $baseTextMaker->make(['endTemplate' => '',]);
         }
 
-        File::safeWrite($destDir . "$className.phtml", $componentText);
+        $classTextMaker->save($destDir . $className . CLASS_JS_EXTENSION);
+        $baseElementTextMaker->save($destDir . $className . "Element" . JS_EXTENSION);
+        $baseTextMaker->save($destDir . "$className.phtml");
+
 
     }
 }

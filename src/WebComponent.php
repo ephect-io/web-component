@@ -5,6 +5,7 @@ namespace Ephect\Plugins\WebComponent;
 use Ephect\Framework\Components\Application\ApplicationComponent;
 use Ephect\Framework\Modules\ModuleMaker;
 use Ephect\Framework\Registry\ComponentRegistry;
+use Ephect\Framework\Templates\TemplateMaker;
 use Ephect\Framework\Utils\File;
 
 class WebComponent extends ApplicationComponent
@@ -16,9 +17,9 @@ class WebComponent extends ApplicationComponent
         $namespace = CONFIG_NAMESPACE;
         $function = $info->filename;
 
-        $html = ModuleMaker::makeTemplate('Component.tpl', ['funcNamespace' => $namespace, 'funcName' => $function, 'funcBody' => '', 'html' => $html]);
-
-        File::safeWrite(COPY_DIR . $filename, $html);
+        $componentTextMaker =  new TemplateMaker(MODULE_SRC_DIR . 'Templates' . DIRECTORY_SEPARATOR . 'Component.tpl');
+        $componentTextMaker->make(['funcNamespace' => $namespace, 'funcName' => $function, 'funcBody' => '', 'html' => $html]);
+        $componentTextMaker->save(COPY_DIR . $filename);
 
     }
 

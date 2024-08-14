@@ -3,6 +3,7 @@
         ${result}
     </h1>
     <slot></slot>
+    {{endTemplate}}
 </template>
 <script>
     import {{Base}} from "./{{Base}}.class.js"
