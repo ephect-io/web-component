@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "24d0b3bef2406e24b729ce40c8b9fb1eaa49beb4"
+                "reference": "d06b8393587e492aa46d3c7c0ba3c12333e24509"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/24d0b3bef2406e24b729ce40c8b9fb1eaa49beb4",
-                "reference": "24d0b3bef2406e24b729ce40c8b9fb1eaa49beb4",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/d06b8393587e492aa46d3c7c0ba3c12333e24509",
+                "reference": "d06b8393587e492aa46d3c7c0ba3c12333e24509",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/ephect-io/framework/issues",
                 "source": "https://github.com/ephect-io/framework/tree/develop"
             },
-            "time": "2024-08-17T14:17:46+00:00"
+            "time": "2024-08-17T14:56:29+00:00"
         }
     ],
     "packages-dev": [],
