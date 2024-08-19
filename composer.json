@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "ephect-io/framework": "dev-develop"
+        "ephect-io/framework": "dev-remove_dbal"
     },
     "minimum-stability": "stable",
     "bin": [
