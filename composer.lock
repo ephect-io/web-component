@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "fa6cd7a07cd9fbbd20d5c1e797a06deddd49ac58"
+                "reference": "e974d5856a41eacd760a1e4a88c2b5f89bfd936d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/fa6cd7a07cd9fbbd20d5c1e797a06deddd49ac58",
-                "reference": "fa6cd7a07cd9fbbd20d5c1e797a06deddd49ac58",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/e974d5856a41eacd760a1e4a88c2b5f89bfd936d",
+                "reference": "e974d5856a41eacd760a1e4a88c2b5f89bfd936d",
                 "shasum": ""
             },
             "require": {
@@ -31,6 +31,11 @@
                 "php": "^8.2"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ephect\\": "Ephect/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0+"
@@ -49,7 +54,7 @@
                 "issues": "https://github.com/ephect-io/framework/issues",
                 "source": "https://github.com/ephect-io/framework/tree/develop"
             },
-            "time": "2024-08-18T23:20:01+00:00"
+            "time": "2024-08-19T07:12:01+00:00"
         }
     ],
     "packages-dev": [],
