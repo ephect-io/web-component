@@ -2,7 +2,7 @@
 
 namespace Ephect\Modules\WebComponent;
 
-use Ephect\Framework\Components\Application\ApplicationComponent;
+use Ephect\Forms\Components\Application\ApplicationComponent;
 use Ephect\Framework\Registry\ComponentRegistry;
 use Ephect\Framework\Templates\TemplateMaker;
 
