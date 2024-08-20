@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0021349c654e0b200f98febc5c08d06d",
+    "content-hash": "5b74187fd5bb2d2ad1346bcb70966274",
     "packages": [
         {
             "name": "ephect-io/framework",
-            "version": "dev-remove_samples",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
@@ -52,7 +52,7 @@
             "homepage": "https://ephect.io",
             "support": {
                 "issues": "https://github.com/ephect-io/framework/issues",
-                "source": "https://github.com/ephect-io/framework/tree/remove_samples"
+                "source": "https://github.com/ephect-io/framework/tree/develop"
             },
             "time": "2024-08-20T08:00:40+00:00"
         }
