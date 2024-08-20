@@ -2,10 +2,12 @@
 
 namespace Ephect\Modules\WebComponent\Manifest;
 
-use Ephect\Framework\Element;
+use Ephect\Framework\ElementTrait;
 
-class ManifestEntity extends Element implements ManifestEntityInterface
+class ManifestEntity implements ManifestEntityInterface
 {
+    use ElementTrait;
+
     private string $tag;
     private string $className;
     private string $entrypoint;

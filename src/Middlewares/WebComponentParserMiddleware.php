@@ -3,7 +3,7 @@
 namespace Ephect\Modules\WebComponent\Middlewares;
 
 use Ephect\Forms\Components\ComponentEntityInterface;
-use Ephect\Framework\Middlewares\ComponentParserMiddlewareInterface;
+use Ephect\Forms\Middlewares\ComponentParserMiddlewareInterface;
 use Ephect\Framework\Registry\StateRegistry;
 use function Ephect\Hooks\useState;
 
