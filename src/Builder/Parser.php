@@ -1,6 +1,6 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent\Builder;
+namespace Ephect\Modules\WebComponent\Builder;
 
 use Ephect\Framework\Components\Generators\RawHtmlParser;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent\Builder;
+namespace Ephect\Modules\WebComponent\Builder;
 
 use Ephect\Framework\Templates\TemplateMaker;
-use Ephect\Plugins\WebComponent\Manifest\ManifestStructure;
-use Ephect\Plugins\WebComponent\Manifest\ManifestWriter;
+use Ephect\Modules\WebComponent\Manifest\ManifestStructure;
+use Ephect\Modules\WebComponent\Manifest\ManifestWriter;
 use Exception;
 
 class Compiler

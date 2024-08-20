@@ -1,12 +1,12 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent\Commands\MakeWebComponent;
+namespace Ephect\Modules\WebComponent\Commands\MakeWebComponent;
 
 use Ephect\Framework\CLI\Console;
 use Ephect\Framework\CLI\ConsoleColors;
 use Ephect\Framework\CLI\Enums\ConsoleOptionsEnum;
 use Ephect\Framework\Commands\AbstractCommandLib;
-use Ephect\Plugins\WebComponent\Builder\Compiler;
+use Ephect\Modules\WebComponent\Builder\Compiler;
 use Exception;
 
 class Lib extends AbstractCommandLib

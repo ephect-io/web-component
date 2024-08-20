@@ -1,12 +1,10 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent;
+namespace Ephect\Modules\WebComponent;
 
 use Ephect\Framework\Components\Application\ApplicationComponent;
-use Ephect\Framework\Modules\ModuleMaker;
 use Ephect\Framework\Registry\ComponentRegistry;
 use Ephect\Framework\Templates\TemplateMaker;
-use Ephect\Framework\Utils\File;
 
 class WebComponent extends ApplicationComponent
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent;
+namespace Ephect\Modules\WebComponent;
 
-use Ephect\Plugins\WebComponent\Manifest\ManifestEntity;
+use Ephect\Modules\WebComponent\Manifest\ManifestEntity;
 
 interface WebComponentServiceInterface
 {

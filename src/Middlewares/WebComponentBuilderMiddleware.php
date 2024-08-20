@@ -1,6 +1,6 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent\Middlewares;
+namespace Ephect\Modules\WebComponent\Middlewares;
 
 use Ephect\Framework\Middlewares\ApplicationStateMiddlewareInterface;
 

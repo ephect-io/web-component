@@ -1,10 +1,10 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent\Attributes;
+namespace Ephect\Modules\WebComponent\Attributes;
 
 use Attribute;
 use Ephect\Framework\Middlewares\AttributeMiddlewareInterface;
-use Ephect\Plugins\WebComponent\Middlewares\WebComponentParserMiddleware;
+use Ephect\Modules\WebComponent\Middlewares\WebComponentParserMiddleware;
 
 #[Attribute(Attribute::TARGET_FUNCTION)]
 class WebComponentZeroConf implements AttributeMiddlewareInterface

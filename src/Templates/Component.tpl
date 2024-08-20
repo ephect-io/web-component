@@ -1,7 +1,7 @@
 <?php
 namespace {{funcNamespace}};
 
-use Ephect\Plugins\WebComponent\Attributes\WebComponentZeroConf;
+use Ephect\Modules\WebComponent\Attributes\WebComponentZeroConf;
 use function Ephect\Hooks\useEffect;
 
 #[WebComponentZeroConf]

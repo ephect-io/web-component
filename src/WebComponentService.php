@@ -1,13 +1,13 @@
 <?php
 
-namespace Ephect\Plugins\WebComponent;
+namespace Ephect\Modules\WebComponent;
 
 use DateTime;
-use Ephect\Framework\Components\ChildrenInterface;
+use Ephect\Forms\Components\ChildrenInterface;
 use Ephect\Framework\Utils\File;
-use Ephect\Plugins\WebComponent\Builder\Parser;
-use Ephect\Plugins\WebComponent\Manifest\ManifestEntity;
-use Ephect\Plugins\WebComponent\Manifest\ManifestReader;
+use Ephect\Modules\WebComponent\Builder\Parser;
+use Ephect\Modules\WebComponent\Manifest\ManifestEntity;
+use Ephect\Modules\WebComponent\Manifest\ManifestReader;
 
 class WebComponentService implements WebComponentServiceInterface
 {
