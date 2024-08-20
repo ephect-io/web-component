@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b74187fd5bb2d2ad1346bcb70966274",
+    "content-hash": "0021349c654e0b200f98febc5c08d06d",
     "packages": [
         {
             "name": "ephect-io/framework",
-            "version": "dev-develop",
+            "version": "dev-remove_samples",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "2fd9b8d3dcfd8ba3c87d7dc1e77b115c6eb5ef68"
+                "reference": "964ea84835b796f55c7e09ef7b8133cfb7c03583"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/2fd9b8d3dcfd8ba3c87d7dc1e77b115c6eb5ef68",
-                "reference": "2fd9b8d3dcfd8ba3c87d7dc1e77b115c6eb5ef68",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/964ea84835b796f55c7e09ef7b8133cfb7c03583",
+                "reference": "964ea84835b796f55c7e09ef7b8133cfb7c03583",
                 "shasum": ""
             },
             "require": {
@@ -52,9 +52,9 @@
             "homepage": "https://ephect.io",
             "support": {
                 "issues": "https://github.com/ephect-io/framework/issues",
-                "source": "https://github.com/ephect-io/framework/tree/develop"
+                "source": "https://github.com/ephect-io/framework/tree/remove_samples"
             },
-            "time": "2024-08-19T22:56:50+00:00"
+            "time": "2024-08-20T08:00:40+00:00"
         }
     ],
     "packages-dev": [],
