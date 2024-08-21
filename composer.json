@@ -11,11 +11,6 @@
             "email": "dpjb@hotmail.fr"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Ephect\\Modules\\WebComponent\\": "src/"
-        }
-    },
     "require": {
         "ephect-io/framework": "dev-remove_components",
         "ephect-io/forms": "dev-develop"
