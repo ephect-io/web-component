@@ -2,12 +2,10 @@
 
 namespace Ephect\Modules\WebComponent;
 
-use Ephect\Forms\Components\Application\ApplicationComponent;
-use Ephect\Forms\Components\Plugin;
-use Ephect\Forms\Registry\ComponentRegistry;
+use Ephect\Forms\Components\Component;
 use Ephect\Framework\Templates\TemplateMaker;
 
-class WebComponent extends Plugin
+class WebComponent extends Component
 {
     public function makeComponent(string $filename, string &$html): void
     {
