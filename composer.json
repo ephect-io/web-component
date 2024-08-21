@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "ephect-io/framework": "dev-remove_components",
+        "ephect-io/framework": "dev-develop",
         "ephect-io/forms": "dev-develop"
     },
     "minimum-stability": "stable",
