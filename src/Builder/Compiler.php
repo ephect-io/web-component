@@ -58,7 +58,7 @@ class Compiler
         $classTextMaker = new TemplateMaker($templatesDir . 'Base.class.tpl');
         $baseElementTextMaker = new TemplateMaker($templatesDir . 'BaseElement.tpl');
         $baseTextMaker = new TemplateMaker($templatesDir . 'Base.tpl');
-        $componentTextMaker =  new TemplateMaker($templatesDir . 'Component.tpl');
+        $componentTextMaker = new TemplateMaker($templatesDir . 'Component.tpl');
 
         $classTextMaker->make(['Base' => $className, 'entrypoint' => $entrypoint,]);
 

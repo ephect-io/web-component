@@ -31,7 +31,7 @@ class Lib extends AbstractCommandLib
 
             $builder->copyTemplates($tagName, $className, $hasBackendProps, $entrypoint, $arguments, $srcDir, $destDir);
 
-            Console::writeLine(ConsoleColors::getColoredString("WebComponent ", ConsoleColors::BLUE) . "%s" .  ConsoleColors::getColoredString(" is available in:", ConsoleColors::BLUE), $className);
+            Console::writeLine(ConsoleColors::getColoredString("WebComponent ", ConsoleColors::BLUE) . "%s" . ConsoleColors::getColoredString(" is available in:", ConsoleColors::BLUE), $className);
             Console::writeLine("%s", $destDir);
         } catch (Exception $ex) {
             Console::error($ex, ConsoleOptionsEnum::ErrorMessageOnly);
@@ -50,7 +50,7 @@ class Lib extends AbstractCommandLib
          * Asking the tag name.
          */
         $tagName = Console::readLine("Tag name (kebab-case): ");
-        $tagName =  strtolower($tagName);
+        $tagName = strtolower($tagName);
         if (trim($tagName) == '') {
             throw new Exception("WebComponent tag name must not be empty");
         }
@@ -98,6 +98,5 @@ class Lib extends AbstractCommandLib
         return [$tagName, $className, $hasBackendProps, $entrypoint, $arguments];
     }
 
-   
 
 }

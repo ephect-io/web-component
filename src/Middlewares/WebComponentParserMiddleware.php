@@ -12,7 +12,7 @@ class WebComponentParserMiddleware implements ComponentParserMiddlewareInterface
     public function parse(ComponentEntityInterface|null $parent, string $motherUID, string $funcName, string $props, array $arguments): void
     {
         StateRegistry::load();
-        useState(["middlewares" => [WebComponentBuilderMiddleware::class => (object) $arguments],]);
+        useState(["middlewares" => [WebComponentBuilderMiddleware::class => (object)$arguments],]);
         StateRegistry::saveByMotherUid($motherUID);
     }
 }

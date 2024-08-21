@@ -36,7 +36,7 @@ class WebComponentService implements WebComponentServiceInterface
         if ($props !== null) {
             $componentArgs = [];
             foreach ($props as $key => $value) {
-                if($key == 'uid') {
+                if ($key == 'uid') {
                     continue;
                 }
                 $componentArgs[] = $key . '="' . $value . '"';
