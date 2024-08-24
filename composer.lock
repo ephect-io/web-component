@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/forms.git",
-                "reference": "e0d6a6865af55ac721ef4a2885f3d59e452ad019"
+                "reference": "7052297062ce17e789cca14fdf5a8b3319e25c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/forms/zipball/e0d6a6865af55ac721ef4a2885f3d59e452ad019",
-                "reference": "e0d6a6865af55ac721ef4a2885f3d59e452ad019",
+                "url": "https://api.github.com/repos/ephect-io/forms/zipball/7052297062ce17e789cca14fdf5a8b3319e25c8e",
+                "reference": "7052297062ce17e789cca14fdf5a8b3319e25c8e",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 "issues": "https://github.com/ephect-io/forms/issues",
                 "source": "https://github.com/ephect-io/forms/tree/develop"
             },
-            "time": "2024-08-21T20:31:46+00:00"
+            "time": "2024-08-24T08:47:36+00:00"
         },
         {
             "name": "ephect-io/framework",
@@ -51,12 +51,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/framework.git",
-                "reference": "464a3802c71fefb7533f7f72b5858ebb6191fdc1"
+                "reference": "cbb2b12c1738717850e655664da1e08de4cc22ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/framework/zipball/464a3802c71fefb7533f7f72b5858ebb6191fdc1",
-                "reference": "464a3802c71fefb7533f7f72b5858ebb6191fdc1",
+                "url": "https://api.github.com/repos/ephect-io/framework/zipball/cbb2b12c1738717850e655664da1e08de4cc22ac",
+                "reference": "cbb2b12c1738717850e655664da1e08de4cc22ac",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "issues": "https://github.com/ephect-io/framework/issues",
                 "source": "https://github.com/ephect-io/framework/tree/develop"
             },
-            "time": "2024-08-21T19:32:21+00:00"
+            "time": "2024-08-24T08:39:18+00:00"
         }
     ],
     "packages-dev": [],
