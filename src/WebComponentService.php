@@ -9,11 +9,13 @@ use Ephect\Modules\WebComponent\Builder\Parser;
 use Ephect\Modules\WebComponent\Manifest\ManifestEntity;
 use Ephect\Modules\WebComponent\Manifest\ManifestReader;
 
-class WebComponentService implements WebComponentServiceInterface
+final class WebComponentService implements WebComponentServiceInterface
 {
 
+    private readonly string $customWebcomponentRoot;
     public function __construct(private readonly ChildrenInterface $children)
     {
+        $this->customWebcomponentRoot = Common::getCustomWebComponentRoot();
     }
 
     public function isPending(): bool
@@ -76,14 +78,14 @@ class WebComponentService implements WebComponentServiceInterface
         $script = $parser->getScript($name);
 
         File::safeWrite($finalJs, $script);
-        copy(CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . $classJs, $runtimeDir . $classJs);
-        copy(CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . $elementJs, $runtimeDir . $elementJs);
+        copy($this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . $classJs, $runtimeDir . $classJs);
+        copy($this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . $elementJs, $runtimeDir . $elementJs);
 
-        if (file_exists(CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . "lib")) {
-            $libFiles = File::walkTreeFiltered(CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . "lib");
+        if (file_exists($this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . "lib")) {
+            $libFiles = File::walkTreeFiltered($this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . "lib");
             File::safeMkDir($runtimeDir . 'lib');
             foreach ($libFiles as $filename) {
-                copy(CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . 'lib' . $filename, $runtimeDir . 'lib' . $filename);
+                copy($this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . 'lib' . $filename, $runtimeDir . 'lib' . $filename);
             }
         }
     }
@@ -91,7 +93,7 @@ class WebComponentService implements WebComponentServiceInterface
     public function storeHTML(string $html): void
     {
         $name = $this->children->getName();
-        $finalHTML = CUSTOM_WEBCOMPONENTS_ROOT . $name . DIRECTORY_SEPARATOR . $name . HTML_EXTENSION;
+        $finalHTML = $this->customWebcomponentRoot . $name . DIRECTORY_SEPARATOR . $name . HTML_EXTENSION;
         File::safeWrite($finalHTML, $html);
     }
 
