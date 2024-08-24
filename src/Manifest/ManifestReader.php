@@ -3,6 +3,7 @@
 namespace Ephect\Modules\WebComponent\Manifest;
 
 use Ephect\Framework\Utils\File;
+use Ephect\Modules\WebComponent\Common;
 
 class ManifestReader
 {
@@ -17,7 +18,7 @@ class ManifestReader
         $manifestCache = CACHE_DIR . $this->motherUID . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename;
 
         if (!file_exists($manifestCache)) {
-            copy(CUSTOM_WEBCOMPONENTS_ROOT . $this->name . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename, $manifestCache);
+            copy(Common::getCustomWebComponentRoot() . $this->name . DIRECTORY_SEPARATOR . $this->name . '.' . $manifestFilename, $manifestCache);
         }
 
         $manifestJson = File::safeRead($manifestCache);
