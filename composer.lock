@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ephect-io/forms.git",
-                "reference": "7052297062ce17e789cca14fdf5a8b3319e25c8e"
+                "reference": "03a9b0fded183513a2f375f795a20a89fb1672f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ephect-io/forms/zipball/7052297062ce17e789cca14fdf5a8b3319e25c8e",
-                "reference": "7052297062ce17e789cca14fdf5a8b3319e25c8e",
+                "url": "https://api.github.com/repos/ephect-io/forms/zipball/03a9b0fded183513a2f375f795a20a89fb1672f6",
+                "reference": "03a9b0fded183513a2f375f795a20a89fb1672f6",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 "issues": "https://github.com/ephect-io/forms/issues",
                 "source": "https://github.com/ephect-io/forms/tree/develop"
             },
-            "time": "2024-08-24T08:47:36+00:00"
+            "time": "2024-09-02T18:25:01+00:00"
         },
         {
             "name": "ephect-io/framework",
